@@ -1,7 +1,8 @@
 import React from "react";
-import menu from "../../utils/constants/menu";
+import data from "../../utils/constants/data";
 
 const Footer = () => {
+ const { menu } = data;
  return (
   <footer className="bg-primary border-t w-full text-white border-gray-300 md:shadow-md">
    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

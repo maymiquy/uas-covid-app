@@ -1,6 +1,7 @@
 import React from "react";
-import menu from "../../utils/constants/menu";
+import data from "../../utils/constants/data";
 const Navbar = () => {
+ const { menu } = data;
  const [showingNavigationDropdown, setShowingNavigationDropdown] =
   React.useState(false);
  const [isActive, setActive] = React.useState(menu[0].id);
@@ -11,7 +12,7 @@ const Navbar = () => {
 
  return (
   <>
-   <nav className="bg-primary border-b w-full text-white border-gray-300 md:shadow-md">
+   <nav className="bg-primary border-b w-full text-white border-gray-300 md:shadow-md top-0 z-20 fixed transition duration-300 ease-linear">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
      <div className="flex flex-row w-full justify-evenly items-center h-[4.5rem]">
       <div className="flex justify-between w-full">
@@ -76,14 +77,13 @@ const Navbar = () => {
      <div className="flex flex-col space-y-3 shadow-md">
       {menu.map((item, index) => (
        <div
+        key={index}
         className={`py-2 my-2 font-medium text-sm text-nowrap ps-3  hover:bg-white hover:text-gray-500
         ${isActive?.id === item.id ? " bg-white text-gray-500" : ""}
        `}
         onClick={() => handleActiveLink(item.id)}
        >
-        <a key={index} href={item.id}>
-         {item.name}
-        </a>
+        <a href={item.id}>{item.name}</a>
        </div>
       ))}
      </div>
