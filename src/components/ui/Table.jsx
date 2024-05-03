@@ -14,7 +14,7 @@ const Head = (props) => {
  const {} = props;
 
  return (
-  <thead class="text-xs text-gray-700 uppercase bg-primary">
+  <thead class="text-xs text-center text-gray-700 uppercase bg-primary">
    <tr>
     <th scope="col" class="py-3 px-6">
      No
@@ -43,7 +43,7 @@ const Body = (props) => {
  const { iteration, province, positive, recovered, medicate, dead } = props;
 
  return (
-  <tbody>
+  <tbody className="text-center truncate">
    <tr class="bg-white border-b">
     <td class="py-4 px-6">{iteration}</td>
     <td class="py-4 px-6">{province}</td>
