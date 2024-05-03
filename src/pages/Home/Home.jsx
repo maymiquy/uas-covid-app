@@ -5,7 +5,10 @@ function HomePage() {
  return (
   <>
    <HomeLayout>
-    <section>Home</section>
+    <section>Hero</section>
+    <section>About</section>
+    <section>Table</section>
+    <section>Form</section>
    </HomeLayout>
   </>
  );
