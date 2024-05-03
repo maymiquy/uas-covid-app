@@ -1,11 +1,12 @@
 import React from "react";
 import HomeLayout from "../../layouts/HomeLayout";
+import Hero from "../../components/Hero/Hero";
 
 function HomePage() {
  return (
   <>
    <HomeLayout>
-    <section>Hero</section>
+    <Hero />
     <section>About</section>
     <section>Table</section>
     <section>Form</section>

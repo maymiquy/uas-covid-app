@@ -7,9 +7,9 @@ const HomeLayout = (props) => {
 
  return (
   <>
-   <div className="flex flex-col justify-center items-center gap-6">
+   <div className="flex flex-col">
     <Navbar />
-    <main>{children}</main>
+    <main className="w-full relative">{children}</main>
     <Footer />
    </div>
   </>
