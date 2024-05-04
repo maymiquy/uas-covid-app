@@ -7,11 +7,9 @@ const HomeLayout = (props) => {
 
  return (
   <>
-   <div className="flex flex-col">
-    <Navbar />
-    <main className="w-full relative">{children}</main>
-    <Footer />
-   </div>
+   <Navbar />
+   <main className="w-full">{children}</main>
+   <Footer />
   </>
  );
 };

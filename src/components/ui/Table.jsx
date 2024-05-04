@@ -2,10 +2,10 @@ const Table = (props) => {
  const { children } = props;
 
  return (
-  <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-   <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500">{children}</table>
-   </div>
+  <div className="overflow-x-auto relative shadow-md rounded-[4px] md:rounded-lg">
+   <table className="w-full text-xs md:text-sm text-center text-gray-500 table-fixed md:table-auto">
+    {children}
+   </table>
   </div>
  );
 };
@@ -14,25 +14,25 @@ const Head = (props) => {
  const {} = props;
 
  return (
-  <thead class="text-xs text-center text-gray-700 uppercase bg-primary">
+  <thead className="text-[10px] md:text-xs text-center text-gray-700 uppercase bg-primary">
    <tr>
-    <th scope="col" class="py-3 px-6">
+    <th scope="col" className="p-1 md:p-3">
      No
     </th>
-    <th scope="col" class="py-3 px-6">
-     Provinsi
+    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
+     Province
     </th>
-    <th scope="col" class="py-3 px-6">
-     Positif
+    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
+     Positive
     </th>
-    <th scope="col" class="py-3 px-6">
-     Sembuh
+    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
+     Covered
     </th>
-    <th scope="col" class="py-3 px-6">
-     Dirawat
+    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
+     Medicate
     </th>
-    <th scope="col" class="py-3 px-6">
-     Meninggal
+    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
+     Dead
     </th>
    </tr>
   </thead>
@@ -43,14 +43,14 @@ const Body = (props) => {
  const { iteration, province, positive, recovered, medicate, dead } = props;
 
  return (
-  <tbody className="text-center truncate">
-   <tr class="bg-white border-b">
-    <td class="py-4 px-6">{iteration}</td>
-    <td class="py-4 px-6">{province}</td>
-    <td class="py-4 px-6">{positive}</td>
-    <td class="py-4 px-6">{recovered}</td>
-    <td class="py-4 px-6">{medicate}</td>
-    <td class="py-4 px-6">{dead}</td>
+  <tbody className="text-[10px] text-center">
+   <tr className="bg-white border-b">
+    <td className="p-1 md:p-3">{iteration}</td>
+    <td className="py-1 px-3 md:py-4 md:px-6">{province}</td>
+    <td className="py-1 px-3 md:py-4 md:px-6">{positive}</td>
+    <td className="py-1 px-3 md:py-4 md:px-6">{recovered}</td>
+    <td className="py-1 px-3 md:py-4 md:px-6">{medicate}</td>
+    <td className="py-1 px-3 md:py-4 md:px-6">{dead}</td>
    </tr>
   </tbody>
  );
