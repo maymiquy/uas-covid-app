@@ -2,8 +2,8 @@ const Table = (props) => {
  const { children } = props;
 
  return (
-  <div className="overflow-x-auto relative shadow-md rounded-[4px] md:rounded-lg">
-   <table className="w-full text-xs md:text-sm text-center text-gray-500 table-fixed md:table-auto">
+  <div className="overflow-x-scroll relative shadow-md rounded-[4px] md:rounded-lg">
+   <table className="w-full text-xs md:text-sm text-left text-gray-500 table-fixed md:table-auto">
     {children}
    </table>
   </div>
@@ -14,7 +14,7 @@ const Head = (props) => {
  const {} = props;
 
  return (
-  <thead className="text-[10px] md:text-xs text-center text-gray-700 uppercase bg-primary">
+  <thead className="text-[8px] md:text-xs text-left text-gray-700 md:uppercase bg-primary overflow-x-scroll">
    <tr>
     <th scope="col" className="p-1 md:p-3">
      No
@@ -43,7 +43,7 @@ const Body = (props) => {
  const { iteration, province, positive, recovered, medicate, dead } = props;
 
  return (
-  <tbody className="text-[10px] text-center">
+  <tbody className="text-[8px] md:text-xs text-left overflow-x-scroll">
    <tr className="bg-white border-b">
     <td className="p-1 md:p-3">{iteration}</td>
     <td className="py-1 px-3 md:py-4 md:px-6">{province}</td>

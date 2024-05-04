@@ -12,7 +12,7 @@ const Footer = () => {
        <a href="/" className="text-xl md:text-2xl font-semibold">
         Covid ID
        </a>
-       <p className="text-xs md:text-base">
+       <p className="text-[10px] md:text-base">
         Developed by{" "}
         <a
          href="https://github.com/maymiquy"
@@ -23,7 +23,7 @@ const Footer = () => {
        </p>
       </div>
       <div className="flex-col space-y-2">
-       <div className="font-medium text-xs md:text-sm text-nowrap space-x-2 md:space-x-8 md:ms-10 flex items-center">
+       <div className="font-medium text-[10px] md:text-sm text-nowrap space-x-2 md:space-x-8 md:ms-10 flex items-center">
         {menu.map((item, index) => (
          <a
           key={index}
