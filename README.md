@@ -1,6 +1,44 @@
-# React + Vite
+# 🔗 [covid-uts.vercel.app](https://covid-uts.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project for `Middle Exam` of [Pemrograman Front-end], developing front-end application using `React` and implementing concept as `React Front-end Developer`.
+
+#### Implements Modern JS or ES :
+
+- Variable.
+- Data Types.
+- Template Literals.
+- Conditional.
+- Looping.
+- Function.
+- Data Structure.
+- Destructing.
+- Rest & Spread Operator.
+- Array Methods.
+- ES Modules.
+
+#### Implements main concept of React:
+
+- Component.
+- JSX.
+- Props.
+- Vite.
+- Describing The UI
+- Styling.
+- Folder Structure.
+- Responsive Design.
+- Rendering List.
+- Responding to Event.
+- State.
+- Form.
+- Lifting State.
+
+## Tech stack
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Babel](https://babeljs.io/)
+- [SWC](https://swc.rs/)
+- [Tailwind](https://tailwindcss.com/)
 
 Currently, two official plugins are available:
 
