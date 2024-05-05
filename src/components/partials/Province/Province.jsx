@@ -3,13 +3,15 @@ import Table from "../../ui/Table";
 import data from "../../../utils/constants/provinces";
 import Pagination from "../../ui/Paginantion";
 
-const Province = () => {
+const Province = ({ provinceData }) => {
  const [currentPage, setCurrentPage] = React.useState(1);
  const [itemsPerPage] = React.useState(5);
 
- const indexOfLastItem = currentPage * itemsPerPage;
- const indexOfFirstItem = indexOfLastItem - itemsPerPage;
- const currentItems = data.provinces.slice(indexOfFirstItem, indexOfLastItem);
+ const currentItems = React.useMemo(() => {
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  return data.provinces.slice(indexOfFirstItem, indexOfLastItem);
+ }, [currentPage, itemsPerPage, data.provinces]);
 
  const handlePageChange = (pageNumber) => {
   setCurrentPage(pageNumber);

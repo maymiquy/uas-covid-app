@@ -7,7 +7,7 @@ const Statistic = () => {
  return (
   <section
    id="statistic"
-   className="w-full flex flex-col bg-zinc-100 py-16 px-24"
+   className="w-full flex flex-col bg-zinc-100 p-12 md:p-28"
   >
    <div className="text-center">
     <h2 className="text-4xl font-bold text-primary">Statistic</h2>

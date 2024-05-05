@@ -4,7 +4,7 @@ import Button from "../../ui/Button";
 
 const Hero = () => {
  return (
-  <section id="home" className="bg-white w-full p-20 md:p-24">
+  <section id="home" className="bg-white w-full p-20 md:py-44 md:px-24">
    <div className="md:grid-cols-[0.6fr_0.6fr] md:grid flex flex-col-reverse items-center justify-between">
     <div className="flex flex-col justify-center gap-4 md:w-[65%] mt-10 md:mt-0">
      <div className="space-y-4">

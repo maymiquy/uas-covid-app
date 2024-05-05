@@ -3,16 +3,23 @@ import HomeLayout from "../../layouts/HomeLayout";
 import Hero from "../../components/partials/Hero/Hero";
 import Statistic from "../../components/partials/Statistic/Statistic";
 import Province from "../../components/partials/Province/Province";
-import Forms from "../../components/partials/Forms/Forms";
+import AddFormProvince from "../../components/partials/AddFormProvince/AddFormProvince";
+import data from "../../utils/constants/provinces";
 
 function HomePage() {
+ const [provinceData, setProvinceData] = React.useState(data.provinces);
+
+ const handleDataUpdate = (updatedData) => {
+  setProvinceData(updatedData);
+ };
+
  return (
   <>
    <HomeLayout>
     <Hero />
     <Statistic />
-    <Province />
-    <Forms />
+    <Province provinceData={provinceData} />
+    <AddFormProvince onDataUpdate={handleDataUpdate} />
    </HomeLayout>
   </>
  );
