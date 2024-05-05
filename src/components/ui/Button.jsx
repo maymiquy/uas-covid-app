@@ -1,4 +1,10 @@
-const Button = ({ title, variant = "primary", className = "", ...rest }) => {
+const Button = ({
+ title,
+ variant = "primary",
+ className = "",
+ type,
+ ...rest
+}) => {
  const variants = {
   primary:
    "bg-primary hover:bg-primary-700 shadow-md text-white font-bold py-2 px-4 rounded",
@@ -15,7 +21,7 @@ const Button = ({ title, variant = "primary", className = "", ...rest }) => {
  const variantStyle = variants[variant] || variants.primary;
 
  return (
-  <button className={`${variantStyle} ${className}`} {...rest}>
+  <button className={`${variantStyle} ${className}`} type={type} {...rest}>
    {title}
   </button>
  );
