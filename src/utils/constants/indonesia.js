@@ -2,19 +2,22 @@ const data = {
   last_update: "2024-04-01",
   indonesia: [
     {
-      status: "Positif",
+      status: "Positive",
       total: 6012818,
-      detail: "https://covid19.mathdro.id/api/countries/indonesia/confirmed",
+      detail: "https://github.com/maymiquy/",
+      variant: "text-secondary",
     },
     {
-      status: "Sembuh",
+      status: "Recovered",
       total: 5750802,
-      detail: "https://covid19.mathdro.id/api/countries/indonesia/recovered",
+      detail: "https://github.com/maymiquy/",
+      variant: "text-primary",
     },
     {
-      status: "Meninggal",
+      status: "Dead",
       total: 155089,
-      detail: "https://covid19.mathdro.id/api/countries/indonesia/deaths",
+      detail: "https://github.com/maymiquy/",
+      variant: "text-danger",
     },
   ],
 };

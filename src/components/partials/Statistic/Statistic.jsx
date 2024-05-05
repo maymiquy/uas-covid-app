@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "../../ui/Card";
-import data from "../../../utils/constants/data";
+import data from "../../../utils/constants/indonesia";
 
 const Statistic = () => {
- const { statis } = data;
+ const [...statis] = data.indonesia;
  return (
   <section
    id="statistic"
@@ -17,17 +17,19 @@ const Statistic = () => {
    </div>
    <div className="flex flex-col gap-4 items-center mt-14 md:justify-center md:flex-row md:space-x-4">
     {statis.map((item, index) => (
-     <Card.Root
-      key={index}
-      className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] flex justify-center items-center"
-     >
-      <Card.Header
-       heading={item.title}
-       sub={item.value}
-       subVariant={item.variant}
-       className="text-4xl"
-      />
-     </Card.Root>
+     <a href={item.detail} key={index}>
+      <Card.Root
+       key={index}
+       className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] flex justify-center items-center"
+      >
+       <Card.Header
+        heading={item.status}
+        sub={item.total}
+        subVariant={item.variant}
+        className="text-4xl"
+       />
+      </Card.Root>
+     </a>
     ))}
    </div>
   </section>
