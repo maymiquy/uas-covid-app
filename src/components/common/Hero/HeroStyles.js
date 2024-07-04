@@ -5,6 +5,7 @@ export const HeroSection = styled.section`
   background-color: ${theme.colors.white};
   width: 100%;
   padding: 5.5rem 2.5rem;
+  min-height: 100vh;
 
   @media (min-width: ${theme.screens.md}) {
     padding: 5.5rem 8rem;
@@ -28,10 +29,10 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  margin-top: 20px;
+  margin-top: 2rem;
 
   @media (min-width: ${theme.screens.md}) {
-    margin-top: 0;
+    margin-top: 4rem;
     width: 65%;
   }
 `;
@@ -40,6 +41,7 @@ export const Heading = styled.h1`
   font-size: ${theme.fontSize['3xl']};
   font-weight: 600;
   color: ${theme.colors.primary};
+  line-height: 10px;
 
   @media (min-width: ${theme.screens.md}) {
     font-size: ${theme.fontSize['4xl']};
@@ -50,6 +52,7 @@ export const Subheading = styled.h3`
   font-size: ${theme.fontSize.md};
   font-weight: 600;
   color: ${theme.colors.secondary};
+  line-height: 10px;
 
   @media (min-width: ${theme.screens.md}) {
     font-size: ${theme.fontSize.lg};

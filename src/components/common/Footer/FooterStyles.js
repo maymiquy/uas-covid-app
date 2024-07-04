@@ -6,6 +6,7 @@ export const FooterContainer = styled.footer`
   border-top: 1px solid ${theme.colors.tertiary};
   width: 100%;
   color: ${theme.colors.white};
+  padding: 1.5rem 0rem;
 
   @media (min-width: ${theme.screens.md}) {
     box-shadow: ${theme.shadows.md};
@@ -39,6 +40,7 @@ export const BrandContainer = styled.div`
   a > span {
     font-size: ${theme.fontSize.xl};
     font-weight: 600;
+    line-height: 20px;
     color: ${theme.colors.white};
 
     @media (min-width: ${theme.screens.md}) {
@@ -48,6 +50,7 @@ export const BrandContainer = styled.div`
 
   a {
     font-size: ${theme.fontSize.xs};
+    line-height: 10px;
     color: ${theme.colors.white};
     text-decoration: none;
     :hover {
@@ -56,6 +59,7 @@ export const BrandContainer = styled.div`
   }
 
   p {
+    line-height: 10px;
     font-size: ${theme.fontSize.xs};
     color: ${theme.colors.white};
   }

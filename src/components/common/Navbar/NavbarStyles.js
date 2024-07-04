@@ -4,9 +4,9 @@ import theme from '../../../utils/theme';
 
 export const NavbarContainer = styled.nav`
   background-color: ${theme.colors.primary};
-  border-bottom: 1px solid ${theme.colors.tertiary};
+  border-bottom: 1px solid ${theme.colors.gray300};
   width: 100%;
-  color: #ffffff;
+  color: ${theme.colors.white};
   position: fixed;
   padding: 0;
   top: 0;
@@ -43,7 +43,8 @@ export const NavbarBrand = styled(Link)`
   font-size: ${theme.fontSize.xl};
   font-weight: 600;
   text-decoration: none;
-  color: #ffffff;
+  color: ${theme.colors.white};
+  line-height: 20px;
 
   @media (min-width: ${theme.screens.md}) {
     font-size: ${theme.fontSize['2xl']};
@@ -64,19 +65,20 @@ export const NavbarLink = styled(Link)`
   font-size: ${theme.fontSize.sm};
   font-weight: 500;
   text-decoration: none;
-  color: #ffffff;
+  color: ${theme.colors.white};
   white-space: nowrap;
   transition: color 0.15s ease-in-out;
+  line-height: 20px;
 
   &:hover {
-    color: ${theme.colors.tertiary};
+    color: ${theme.colors.gray300};
   }
 
   ${({ isActive }) =>
     isActive &&
     `
-    color: ${theme.colors.tertiary};
-    border-bottom: 2px solid ${theme.colors.tertiary};};
+    color: ${theme.colors.gray300};
+    border-bottom: 2px solid ${theme.colors.gray300};};
   `}
 `;
 
@@ -87,13 +89,13 @@ export const NavbarToggle = styled.button`
   justify-content: center;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  color: ${theme.colors.tertiary};
+  color: ${theme.colors.gray300};
   background-color: transparent;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 
   &:hover {
-    color: #A49C9C;
-    background-color: #ffffff;
+    color: ${theme.colors.gray300};
+    background-color: ${theme.colors.white};
   }
 
   @media (min-width: ${theme.screens.md}) {
@@ -120,20 +122,20 @@ export const NavbarDropdownLink = styled(Link)`
   font-size: ${theme.fontSize.sm};
   font-weight: 500;
   text-decoration: none;
-  color: #ffffff;
+  color: ${theme.colors.white};
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 
   &:hover {
-    background-color: #ffffff;
-    color: #A49C9C;
+    background-color: ${theme.colors.white};
+    color: ${theme.colors.gray300};
   }
 
   ${({ isActive }) =>
     isActive &&
     `
-    background-color: #ffffff;
-    color: #A49C9C;
+    background-color: ${theme.colors.white};
+    color: ${theme.colors.gray300};
   `}
 `;

@@ -4,11 +4,8 @@ import theme from "../../utils/theme";
 const TableRoot = styled.div`
  overflow-x: scroll;
  box-shadow: ${theme.shadows.md};
- border-radius: 0.25rem;
-
- @media (min-width: 768px) {
-  border-radius: 0.5rem;
- }
+ border-radius: 0.7rem;
+ background-color: ${theme.colors.tertiary};
 `;
 
 const TableContainer = styled.table`
@@ -16,6 +13,7 @@ const TableContainer = styled.table`
  text-align: left;
  color: ${theme.colors.gray300};
  table-layout: fixed;
+ border-radius: 0.7rem;
 
  @media (min-width: 768px) {
   table-layout: auto;
