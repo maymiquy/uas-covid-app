@@ -1,7 +1,7 @@
 import React from "react";
-import Card from "../../ui/Card";
-import theme from "../../../utils/theme";
-import Section from "../../common/Section/Section";
+import Card from "../ui/Card";
+import theme from "../../utils/theme";
+import Section from "../common/Section/Section";
 
 const Carousel = (props) => {
  const { data = [] } = props;
