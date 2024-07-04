@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Carousel from "../components/Indonesia/Carousel";
 import Province from "../components/Indonesia/Province";
 import { fetchIndonesiaCovidData } from "../services/api";
+import { ProvinceContext } from "../context/ProvinceContext";
 
 const IndonesiaPage = () => {
  const [carouselData, setCarouselData] = useState();
  const [provinceData, setProvinceData] = useState();
- const [currentPage, setCurrentPage] = useState(1);
+ const { currentPage, setCurrentPage } = useContext(ProvinceContext);
  const [itemsPerPage] = useState(5);
 
  const indexOfLastItem = currentPage * itemsPerPage;

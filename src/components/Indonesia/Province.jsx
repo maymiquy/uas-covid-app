@@ -22,10 +22,18 @@ const Province = (props) => {
       <tr key={index}>
        <td>{index + 1}</td>
        <td>{item.name}</td>
-       <td>{item.numbers.confirmed}</td>
-       <td>{item.numbers.recovered}</td>
-       <td>{item.numbers.treatment}</td>
-       <td>{item.numbers.death}</td>
+       <td>
+        {item.numbers?.confirmed} {item.confirmed}
+       </td>
+       <td>
+        {item.numbers?.recovered} {item.recovered}
+       </td>
+       <td>
+        {item.numbers?.treatment} {item.treatment}
+       </td>
+       <td>
+        {item.numbers?.death} {item.death}
+       </td>
       </tr>
      ))}
     </Table.Body>

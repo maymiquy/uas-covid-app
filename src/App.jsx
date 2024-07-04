@@ -1,21 +1,26 @@
 import { ThemeProvider } from "styled-components";
-import HomePage from "./pages/Home";
 import theme from "./utils/theme";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import GlobalStyle from "./components/common/GlobalStyle";
-import IndonesianPage from "./pages/Indonesian";
+import HomePage from "./pages/HomePage";
+import IndonesiaPage from "./pages/IndonesiaPage";
+import ProvincePage from "./pages/ProvincePage";
+import { ProvinceProvider } from "./context/ProvinceContext";
 
 function App() {
  return (
   <ThemeProvider theme={theme}>
-   <GlobalStyle />
-   <MainLayout>
-    <Routes>
-     <Route path="/" element={<HomePage />} />
-     <Route path="/indonesia" element={<IndonesianPage />} />
-    </Routes>
-   </MainLayout>
+   <ProvinceProvider>
+    <GlobalStyle />
+    <MainLayout>
+     <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/indonesia" element={<IndonesiaPage />} />
+      <Route path="/province" element={<ProvincePage />} />
+     </Routes>
+    </MainLayout>
+   </ProvinceProvider>
   </ThemeProvider>
  );
 }
