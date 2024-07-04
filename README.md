@@ -1,6 +1,6 @@
-# 🔗 [covid-uts.vercel.app](https://covid-uts.vercel.app/)
+# 🔗 [covid-uas.vercel.app](https://covid-uas.vercel.app/)
 
-This project for `Middle Exam` of [Pemrograman Front-end], developing front-end application using `React` and implementing concept as `React Front-end Developer`.
+This project for `Final Exam` of [Pemrograman Front-end], developing front-end application using `React` and implementing concept as `React Front-end Developer`.
 
 #### Implements Modern JS or ES :
 
@@ -31,6 +31,11 @@ This project for `Middle Exam` of [Pemrograman Front-end], developing front-end 
 - State.
 - Form.
 - Lifting State.
+- Consuming API
+- React Context or Global State
+- React Router
+- Styled Components
+- Deployment
 
 ## Tech stack
 
@@ -38,7 +43,7 @@ This project for `Middle Exam` of [Pemrograman Front-end], developing front-end 
 - [Vite](https://vitejs.dev/)
 - [Babel](https://babeljs.io/)
 - [SWC](https://swc.rs/)
-- [Tailwind](https://tailwindcss.com/)
+- [Styled Components](https://styled-components.com/)
 
 Currently, two official plugins are available:
 
