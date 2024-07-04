@@ -1,9 +1,5 @@
 import React from "react";
-import HomeLayout from "../../layouts/HomeLayout";
-import Hero from "../../components/partials/Hero/Hero";
-import Statistic from "../../components/partials/Statistic/Statistic";
-import Province from "../../components/partials/Province/Province";
-import AddFormProvince from "../../components/partials/AddFormProvince/AddFormProvince";
+import HomeLayout from "../../layouts/MainLayout";
 import data from "../../utils/constants/provinces";
 
 function HomePage() {
@@ -15,12 +11,7 @@ function HomePage() {
 
  return (
   <>
-   <HomeLayout>
-    <Hero />
-    <Statistic />
-    <Province provinceData={provinceData} />
-    <AddFormProvince onDataUpdate={handleDataUpdate} />
-   </HomeLayout>
+   <h1>Home</h1>
   </>
  );
 }

@@ -1,0 +1,139 @@
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import theme from '../../../utils/theme';
+
+export const NavbarContainer = styled.nav`
+  background-color: ${theme.colors.primary};
+  border-bottom: 1px solid ${theme.colors.tertiary};
+  width: 100%;
+  color: #ffffff;
+  position: fixed;
+  padding: 0;
+  top: 0;
+  z-index: 20;
+  transition: all 0.3s ease-linear;
+
+  @media (min-width: ${theme.screens.md}) {
+    box-shadow: ${theme.shadows.md};
+  }
+`;
+
+export const NavbarInner = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+
+  @media (min-width: ${theme.screens.sm}) {
+    padding: 0 2rem;
+  }
+
+  @media (min-width: ${theme.screens.md}) {
+    padding: 0 8rem;
+  }
+`;
+
+export const NavbarContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+`;
+
+export const NavbarBrand = styled(Link)`
+  font-size: ${theme.fontSize.xl};
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+
+  @media (min-width: ${theme.screens.md}) {
+    font-size: ${theme.fontSize['2xl']};
+  }
+`;
+
+export const NavbarNav = styled.div`
+  display: none;
+  gap: 2rem;
+  align-items: center;
+
+  @media (min-width: ${theme.screens.md}) {
+    display: flex;
+  }
+`;
+
+export const NavbarLink = styled(Link)`
+  font-size: ${theme.fontSize.sm};
+  font-weight: 500;
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+  transition: color 0.15s ease-in-out;
+
+  &:hover {
+    color: ${theme.colors.tertiary};
+  }
+
+  ${({ isActive }) =>
+    isActive &&
+    `
+    color: ${theme.colors.tertiary};
+    border-bottom: 2px solid ${theme.colors.tertiary};};
+  `}
+`;
+
+export const NavbarToggle = styled.button`
+  -webkit-tap-highlight-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: ${theme.colors.tertiary};
+  background-color: transparent;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+
+  &:hover {
+    color: #A49C9C;
+    background-color: #ffffff;
+  }
+
+  @media (min-width: ${theme.screens.md}) {
+    display: none;
+  }
+`;
+
+export const NavbarDropdown = styled.div`
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  right: 0;
+  background-color: ${theme.colors.primary};
+  padding: 1rem 0.5rem;
+
+  @media (min-width: ${theme.screens.md}) {
+    display: none;
+  }
+`;
+
+export const NavbarDropdownLink = styled(Link)`
+  display: block;
+  font-size: ${theme.fontSize.sm};
+  font-weight: 500;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #A49C9C;
+  }
+
+  ${({ isActive }) =>
+    isActive &&
+    `
+    background-color: #ffffff;
+    color: #A49C9C;
+  `}
+`;

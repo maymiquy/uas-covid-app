@@ -6,13 +6,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${theme.fontFamily.poppins}, sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   #root {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    min-height: 100vh;
   }
 
   * {

@@ -1,13 +1,15 @@
 import React from "react";
 
 const SvgHero = (props) => {
- const { className } = props;
+ const { width, height } = props;
  return (
   <>
    <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={width}
+    height={height}
     data-name="Layer 1"
-    className={`md:w-[500px] md:h-[300px] ${className}`}
+    style={{ width: "500px", height: "250px" }}
     viewBox="0 0 888 618.10603"
     xmlnsXlink="http://www.w3.org/1999/xlink"
    >

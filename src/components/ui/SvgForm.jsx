@@ -1,12 +1,11 @@
 import React from "react";
 
-const SvgForm = (props) => {
- const { className } = props;
+const SvgForm = () => {
  return (
   <svg
    xmlns="http://www.w3.org/2000/svg"
    data-name="Layer 1"
-   className={`md:w-[400px] md:h-[520px] ${className}`}
+   style={{ width: "400px", height: "520px" }}
    viewBox="0 0 753.87469 703.82827"
    xmlns:xlink="http://www.w3.org/1999/xlink"
   >

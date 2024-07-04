@@ -1,59 +1,104 @@
-import React from "react";
+import styled from "styled-components";
 import Button from "./Button";
 
-const Pagination = (props) => {
- const { currentPage, totalItems, itemsPerPage, onPageChange } = props;
+const PaginationRoot = styled.div`
+ display: flex;
+ justify-content: center;
+ margin-top: 1rem;
+`;
+
+const PageNumberList = styled.ul`
+ display: flex;
+ list-style: none;
+ padding: 0;
+ margin: 0;
+`;
+
+const PageNumber = styled.li`
+ padding: 0.5rem 0.75rem;
+ background-color: ${({ active, theme }) =>
+  active ? theme.colors.primary : theme.colors.gray200};
+ color: ${({ active, theme }) =>
+  active ? theme.colors.white : theme.colors.gray700};
+ border-radius: ${({ first }) => (first ? "0.375rem 0 0 0.375rem" : "")};
+ border-radius: ${({ last }) => (last ? "0 0.375rem 0.375rem 0" : "")};
+ cursor: pointer;
+ transition: background-color 0.2s ease-in-out;
+
+ &:hover {
+  background-color: ${({ theme }) => theme.colors.gray300};
+ }
+`;
+
+const PrevNextButton = styled(Button)`
+ font-size: 0.75rem;
+ font-weight: medium;
+ border-radius: ${({ first }) => (first ? "0.375rem 0 0 0.375rem" : "")};
+ border-radius: ${({ last }) => (last ? "0 0.375rem 0.375rem 0" : "")};
+ opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+ cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+ transition: background-color 0.2s ease-in-out;
+
+ &:hover {
+  background-color: ${({ disabled, theme }) =>
+   disabled ? theme.colors.danger : theme.colors.gray300};
+ }
+`;
+
+const Pagination = ({
+ currentPage,
+ totalItems,
+ itemsPerPage,
+ onPageChange,
+}) => {
  const totalPages = Math.ceil(totalItems / itemsPerPage);
 
  const renderPageNumbers = () => {
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
    pageNumbers.push(
-    <li
+    <PageNumber
      key={i}
-     className={`px-3 py-2 ${
-      currentPage === i
-       ? "bg-primary text-white"
-       : "bg-gray-200 hover:bg-gray-300"
-     } 
-        ${i === 1 ? "rounded-s-md" : ""} 
-        ${i === totalPages ? "rounded-e-md" : ""}
-     `}
+     active={currentPage === i}
+     first={i === 1}
+     last={i === totalPages}
      onClick={() => onPageChange(i)}
     >
      {i}
-    </li>,
+    </PageNumber>,
    );
   }
   return pageNumbers;
  };
 
  return (
-  <div className="mt-4 flex justify-center">
-   <Button
+  <PaginationRoot>
+   <PrevNextButton
     variant="paginate"
-    className={`mr-2 text-xs font-medium rounded-s-xl ${
-     currentPage === 1
-      ? "opacity-50 cursor-not-allowed hover:bg-danger"
-      : "hover:bg-gray-300"
-    }`}
-    title="Prev"
-    onClick={currentPage === 1 ? () => {} : () => onPageChange(currentPage - 1)}
+    size="sm"
+    first
+    onClick={
+     currentPage === 1 ? undefined : () => onPageChange(currentPage - 1)
+    }
     disabled={currentPage === 1}
-   />
-   <ul className="flex">{renderPageNumbers()}</ul>
-   <Button
+   >
+    Prev
+   </PrevNextButton>
+   <PageNumberList>{renderPageNumbers()}</PageNumberList>
+   <PrevNextButton
     variant="paginate"
-    className={`ml-2 text-xs font-medium rounded-e-xl ${
+    size="sm"
+    last
+    onClick={
      currentPage === totalPages
-      ? "opacity-50 cursor-not-allowed hover:bg-danger"
-      : "hover:bg-gray-300"
-    }`}
-    title="Next"
-    onClick={currentPage === 0 ? () => {} : () => onPageChange(currentPage + 1)}
+      ? undefined
+      : () => onPageChange(currentPage + 1)
+    }
     disabled={currentPage === totalPages}
-   />
-  </div>
+   >
+    Next
+   </PrevNextButton>
+  </PaginationRoot>
  );
 };
 

@@ -1,63 +1,108 @@
-const Table = (props) => {
- const { children } = props;
+import styled from "styled-components";
+import theme from "../../utils/theme";
 
+const TableRoot = styled.div`
+ overflow-x: scroll;
+ box-shadow: ${theme.shadows.md};
+ border-radius: 0.25rem;
+
+ @media (min-width: 768px) {
+  border-radius: 0.5rem;
+ }
+`;
+
+const TableContainer = styled.table`
+ width: 100%;
+ text-align: left;
+ color: ${theme.colors.gray300};
+ table-layout: fixed;
+
+ @media (min-width: 768px) {
+  table-layout: auto;
+ }
+`;
+
+const TableHead = styled.thead`
+ font-size: 0.5rem;
+ text-align: left;
+ color: ${theme.colors.accent};
+ background-color: ${theme.colors.primary};
+ text-transform: uppercase;
+
+ @media (min-width: 768px) {
+  font-size: 0.75rem;
+ }
+
+ th {
+  padding: 0.25rem 0.75rem;
+
+  @media (min-width: 768px) {
+   padding: 0.75rem 1.5rem;
+  }
+ }
+`;
+
+const TableBody = styled.tbody`
+ font-size: 0.5rem;
+ text-align: left;
+
+ @media (min-width: 768px) {
+  font-size: 0.75rem;
+ }
+
+ td {
+  padding: 0.25rem 0.75rem;
+  color: ${theme.colors.accent};
+  background-color: ${theme.colors.white};
+  border-bottom: 1px solid ${theme.colors.gray300};
+
+  @media (min-width: 768px) {
+   padding: 1rem 1.5rem;
+  }
+ }
+`;
+
+const Table = ({ children, ...props }) => {
  return (
-  <div className="overflow-x-scroll relative shadow-md rounded-[4px] md:rounded-lg">
-   <table className="w-full text-xs md:text-sm text-left text-gray-500 table-fixed md:table-auto">
-    {children}
-   </table>
-  </div>
+  <TableRoot {...props}>
+   <TableContainer>{children}</TableContainer>
+  </TableRoot>
  );
 };
 
-const Head = (props) => {
- const {} = props;
-
+Table.Head = ({ rows, ...props }) => {
  return (
-  <thead className="text-[8px] md:text-xs text-left text-gray-700 md:uppercase bg-primary overflow-x-scroll">
+  <TableHead {...props}>
    <tr>
-    <th scope="col" className="p-1 md:p-3">
-     No
-    </th>
-    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
-     Province
-    </th>
-    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
-     Positive
-    </th>
-    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
-     Covered
-    </th>
-    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
-     Medicate
-    </th>
-    <th scope="col" className="py-1 px-3 md:py-3 md:px-6">
-     Dead
-    </th>
+    {rows.map((item, index) => {
+     return <th key={index}>{item}</th>;
+    })}
    </tr>
-  </thead>
+  </TableHead>
  );
 };
 
-const Body = (props) => {
- const { iteration, province, positive, recovered, medicate, dead } = props;
-
+Table.Body = ({
+ iteration,
+ province,
+ positive,
+ recovered,
+ medicate,
+ dead,
+ ...props
+}) => {
  return (
-  <tbody className="text-[8px] md:text-xs text-left overflow-x-scroll">
-   <tr className="bg-white border-b">
-    <td className="p-1 md:p-3">{iteration}</td>
-    <td className="py-1 px-3 md:py-4 md:px-6">{province}</td>
-    <td className="py-1 px-3 md:py-4 md:px-6">{positive}</td>
-    <td className="py-1 px-3 md:py-4 md:px-6">{recovered}</td>
-    <td className="py-1 px-3 md:py-4 md:px-6">{medicate}</td>
-    <td className="py-1 px-3 md:py-4 md:px-6">{dead}</td>
+  <TableBody {...props}>
+   <tr>
+    <td>{iteration}</td>
+    <td>{province}</td>
+    <td>{positive}</td>
+    <td>{recovered}</td>
+    <td>{medicate}</td>
+    <td>{dead}</td>
    </tr>
-  </tbody>
+  </TableBody>
  );
 };
-
-Table.Root = Table;
-Table.Head = Head;
-Table.Body = Body;
 
 export default Table;
