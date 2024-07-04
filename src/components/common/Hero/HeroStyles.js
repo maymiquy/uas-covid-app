@@ -4,11 +4,11 @@ import theme from "../../../utils/theme";
 export const HeroSection = styled.section`
   background-color: ${theme.colors.white};
   width: 100%;
-  padding: 5.5rem 2.5rem;
+  padding: 6rem 2.5rem;
   min-height: 100vh;
 
   @media (min-width: ${theme.screens.md}) {
-    padding: 5.5rem 8rem;
+    padding: 12rem 8rem 0rem 8rem;
   }
 `;
 
@@ -41,7 +41,7 @@ export const Heading = styled.h1`
   font-size: ${theme.fontSize['3xl']};
   font-weight: 600;
   color: ${theme.colors.primary};
-  line-height: 10px;
+  line-height: 0px;
 
   @media (min-width: ${theme.screens.md}) {
     font-size: ${theme.fontSize['4xl']};
@@ -50,9 +50,9 @@ export const Heading = styled.h1`
 
 export const Subheading = styled.h3`
   font-size: ${theme.fontSize.md};
-  font-weight: 600;
+  font-weight: 500;
   color: ${theme.colors.secondary};
-  line-height: 10px;
+  line-height: 0px;
 
   @media (min-width: ${theme.screens.md}) {
     font-size: ${theme.fontSize.lg};
@@ -69,7 +69,7 @@ export const Description = styled.p`
 
   @media (min-width: ${theme.screens.md}) {
     font-size: ${theme.fontSize.md};
-    width: 65%;
+    width: 60%;
   }
 `;
 

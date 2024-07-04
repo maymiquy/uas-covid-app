@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import Province from "../components/Indonesia/Province";
 import { ProvinceContext } from "../context/ProvinceContext";
+import Form from "../components/common/Form/Form";
 
 const ProvincePage = () => {
  const { provinceData, currentPage, setCurrentPage } =
@@ -25,6 +26,7 @@ const ProvincePage = () => {
     itemsPerPage={itemsPerPage}
     onPageChange={handlePaginate}
    />
+   <Form />
   </>
  );
 };

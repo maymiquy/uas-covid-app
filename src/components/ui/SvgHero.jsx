@@ -9,7 +9,7 @@ const SvgHero = (props) => {
     width={width}
     height={height}
     data-name="Layer 1"
-    style={{ width: "500px", height: "250px" }}
+    style={{ width: "500px", height: "300px" }}
     viewBox="0 0 888 618.10603"
     xmlnsXlink="http://www.w3.org/1999/xlink"
    >
