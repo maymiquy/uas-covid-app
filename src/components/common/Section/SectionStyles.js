@@ -31,22 +31,3 @@ export const SectionHeader = styled.div`
   color: ${theme.colors.secondary};
  }
 `;
-
-export const SectionContent = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3.5rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    justify-content: center;
-  }
-
-  a {
-    text-decoration: none;
-  }
-`;

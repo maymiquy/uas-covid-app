@@ -82,27 +82,8 @@ Table.Head = ({ rows, ...props }) => {
  );
 };
 
-Table.Body = ({
- iteration,
- province,
- positive,
- recovered,
- medicate,
- dead,
- ...props
-}) => {
- return (
-  <TableBody {...props}>
-   <tr>
-    <td>{iteration}</td>
-    <td>{province}</td>
-    <td>{positive}</td>
-    <td>{recovered}</td>
-    <td>{medicate}</td>
-    <td>{dead}</td>
-   </tr>
-  </TableBody>
- );
+Table.Body = ({ children, ...props }) => {
+ return <TableBody {...props}>{children}</TableBody>;
 };
 
 export default Table;

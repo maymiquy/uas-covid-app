@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionContent, SectionHeader, SectionRoot } from "./SectionStyles";
+import { SectionHeader, SectionRoot } from "./SectionStyles";
 
 const Section = (props) => {
  return (
@@ -8,7 +8,7 @@ const Section = (props) => {
     <h2>{props.heading}</h2>
     <p>{props.subHeading}</p>
    </SectionHeader>
-   <SectionContent>{props.children}</SectionContent>
+   {props.children}
   </SectionRoot>
  );
 };

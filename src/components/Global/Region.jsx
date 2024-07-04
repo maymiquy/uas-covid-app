@@ -4,6 +4,7 @@ import Card from "../ui/Card";
 import theme from "../../utils/theme";
 import styled from "styled-components";
 import icons from "../../utils/constants/icons";
+import GridContainer from "../ui/GridContainer";
 
 const MetricContainer = styled.div`
  align-items: center;
@@ -34,37 +35,39 @@ const Region = (props) => {
    subHeading="Choices Top Covid Metrics Region"
    styles={{ background: theme.colors.white }}
   >
-   {data.map((item, index) => (
-    <a href={"https://github.com/maymiquy"} key={index}>
-     <Card styles={{ width: "360px", height: "360px" }}>
-      <Card.Header heading={item.name.split(" ").pop()} />
-      <Card.Body>
-       {Object.entries(item.numbers).map(([key, value], index) => (
-        <MetricContainer key={index}>
-         <div>
-          <h4>{key.charAt(0).toUpperCase() + key.slice(1)}</h4>
-          <p
-           style={{
-            color:
-             key.toString() === "confirmed"
-              ? theme.colors.primary
-              : key.toString() === "recovered"
-              ? theme.colors.secondary
-              : theme.colors.danger,
-           }}
-          >
-           {value}
-          </p>
-         </div>
-         {React.cloneElement(React.createElement(icons[index].icon), {
-          color: icons[index].color,
-         })}
-        </MetricContainer>
-       ))}
-      </Card.Body>
-     </Card>
-    </a>
-   ))}
+   <GridContainer>
+    {data.map((item, index) => (
+     <a href={"https://github.com/maymiquy"} key={index}>
+      <Card styles={{ width: "360px", height: "360px" }}>
+       <Card.Header heading={item.name.split(" ").pop()} />
+       <Card.Body>
+        {Object.entries(item.numbers).map(([key, value], index) => (
+         <MetricContainer key={index}>
+          <div>
+           <h4>{key.charAt(0).toUpperCase() + key.slice(1)}</h4>
+           <p
+            style={{
+             color:
+              key.toString() === "confirmed"
+               ? theme.colors.primary
+               : key.toString() === "recovered"
+               ? theme.colors.secondary
+               : theme.colors.danger,
+            }}
+           >
+            {value}
+           </p>
+          </div>
+          {React.cloneElement(React.createElement(icons[index].icon), {
+           color: icons[index].color,
+          })}
+         </MetricContainer>
+        ))}
+       </Card.Body>
+      </Card>
+     </a>
+    ))}
+   </GridContainer>
   </Section>
  );
 };
