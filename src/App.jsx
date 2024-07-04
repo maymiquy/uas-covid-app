@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import HomePage from "./pages/Home/Home";
+import HomePage from "./pages/Home";
 import theme from "./utils/theme";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";

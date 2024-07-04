@@ -5,19 +5,19 @@ const data = {
       status: "Positive",
       total: 6012818,
       detail: "https://github.com/maymiquy/",
-      variant: "text-secondary",
+      variant: "#118AB2",
     },
     {
       status: "Recovered",
       total: 5750802,
       detail: "https://github.com/maymiquy/",
-      variant: "text-primary",
+      variant: "#06D6A0",
     },
     {
       status: "Dead",
       total: 155089,
       detail: "https://github.com/maymiquy/",
-      variant: "text-danger",
+      variant: "#ea1452",
     },
   ],
 };

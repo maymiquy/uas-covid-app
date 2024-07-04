@@ -2,8 +2,11 @@ import styled from "styled-components";
 import theme from "../../utils/theme";
 
 const CardRoot = styled.div`
- display: block;
- padding: 1.5rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ padding: 2rem;
  background-color: ${theme.colors.white};
  border: 1px solid ${theme.colors.tertiary};
  border-radius: 0.75rem;
@@ -16,17 +19,15 @@ const CardRoot = styled.div`
 `;
 
 const CardHeader = styled.div`
- display: flex;
- flex-direction: column;
  align-items: center;
- gap: 1.5rem;
  text-align: center;
 
  h4 {
+  line-height: 10px;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.025em;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${theme.colors.accent};
 
   @media (min-width: 768px) {
    font-size: 2.25rem;
@@ -46,7 +47,7 @@ const CardBody = styled.div`
 
 const Card = ({ children, styles, ...props }) => {
  return (
-  <CardRoot style={{ styles }} {...props}>
+  <CardRoot style={styles} {...props}>
    {children}
   </CardRoot>
  );
