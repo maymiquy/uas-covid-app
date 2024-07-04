@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import Carousel from "../components/Indonesia/Carousel";
 import Province from "../components/Indonesia/Province";
 import { fetchIndonesiaCovidData } from "../services/api";
-import Pagination from "../components/ui/Paginantion";
 
-const IndonesianPage = () => {
+const IndonesiaPage = () => {
  const [carouselData, setCarouselData] = useState();
  const [provinceData, setProvinceData] = useState();
  const [currentPage, setCurrentPage] = useState(1);
@@ -32,7 +31,7 @@ const IndonesianPage = () => {
    <Province
     data={currentItems}
     currentPage={currentPage}
-    totalItems={provinceData.length}
+    totalItems={provinceData?.length}
     itemsPerPage={itemsPerPage}
     onPageChange={handlePaginate}
    />
@@ -40,4 +39,4 @@ const IndonesianPage = () => {
  );
 };
 
-export default IndonesianPage;
+export default IndonesiaPage;
