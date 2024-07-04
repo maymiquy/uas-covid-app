@@ -5,7 +5,7 @@ const navLinkList = {
             href: "/"
         },
         {
-            name: "Indenesia",
+            name: "Indonesia",
             href: "/indonesia"
         },
         {
