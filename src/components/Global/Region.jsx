@@ -13,7 +13,7 @@ const MetricContainer = styled.div`
  justify-content: space-between;
 
  h4 {
-  color: ${theme.colors.tertiary700};
+  color: ${theme.colors.accent};
   font-size: 14px;
   font-weight: 400;
   line-height: 5px;

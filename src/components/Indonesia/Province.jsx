@@ -9,8 +9,8 @@ const Province = (props) => {
 
  return (
   <Section
-   heading="Situation by Province"
-   subHeading="Choices Top Covid Metrics Province"
+   heading="Situation per Day's by Province"
+   subHeading="Choices Covid per Day's Metrics Province"
    styles={{ background: theme.colors.white }}
   >
    <Table>

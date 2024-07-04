@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import IndonesiaPage from "./pages/IndonesiaPage";
 import ProvincePage from "./pages/ProvincePage";
 import { ProvinceProvider } from "./context/ProvinceContext";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
  return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/indonesia" element={<IndonesiaPage />} />
       <Route path="/province" element={<ProvincePage />} />
+      <Route path="/about" element={<AboutPage />} />
      </Routes>
     </MainLayout>
    </ProvinceProvider>
