@@ -20,7 +20,7 @@ export const SectionHeader = styled.div`
  h2 {
   font-size: ${theme.fontSize["4xl"]};
   font-weight: 500;
-  line-height: 10px;
+  line-height: 30px;
   color: ${theme.colors.primary};
  }
 
