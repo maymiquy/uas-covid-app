@@ -6,7 +6,6 @@ import Region from "../components/Global/Region";
 function HomePage() {
  const [carouselData, setCarouselData] = useState();
  const [regionData, setRegionData] = useState();
- console.log(regionData);
 
  useEffect(() => {
   const fetchData = async () => {
