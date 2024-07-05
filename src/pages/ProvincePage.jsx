@@ -15,8 +15,6 @@ const ProvincePage = () => {
 
  const handlePaginate = (pageNumber) => setCurrentPage(pageNumber);
 
- console.log(provinceData);
-
  return (
   <>
    <Province

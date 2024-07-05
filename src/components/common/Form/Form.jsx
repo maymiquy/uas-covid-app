@@ -33,7 +33,13 @@ const Form = () => {
 
  const handleSubmit = (e) => {
   e.preventDefault();
-  handleAddData(formData);
+  handleAddData(name, status, parseInt(amount));
+
+  window.scrollTo({
+   top: 600,
+   behavior: "smooth",
+  });
+
   setFormData({
    name: "",
    status: "",

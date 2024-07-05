@@ -17,7 +17,7 @@ const Carousel = (props) => {
      <a href={"/https://github.com/maymiquy"} key={index}>
       <Card styles={{ width: "360px", height: "360px" }}>
        <Card.Header
-        heading={item.status}
+        heading={item.status.charAt(0).toUpperCase() + item.status.slice(1)}
         subHeading={item.total}
         textColor={
          index === 0
