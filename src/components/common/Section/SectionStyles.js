@@ -27,7 +27,7 @@ export const SectionHeader = styled.div`
  p {
   font-size: ${theme.fontSize.lg};
   font-weight: 400;
-  line-height: 10px;
+  line-height: 20px;
   color: ${theme.colors.secondary};
  }
 `;
