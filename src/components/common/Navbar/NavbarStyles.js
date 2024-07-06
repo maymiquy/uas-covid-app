@@ -88,14 +88,17 @@ export const NavbarToggle = styled.button`
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  border-radius: 0.25rem;
-  color: ${theme.colors.gray300};
+  color: ${theme.colors.white};
   background-color: transparent;
+  border: none;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 
   &:hover {
+    color: ${theme.colors.gray100};
+  }
+
+  &:focus {
     color: ${theme.colors.gray300};
-    background-color: ${theme.colors.white};
   }
 
   @media (min-width: ${theme.screens.md}) {
@@ -128,14 +131,14 @@ export const NavbarDropdownLink = styled(Link)`
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 
   &:hover {
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.tertiary700};
     color: ${theme.colors.gray300};
   }
 
   ${({ isActive }) =>
     isActive &&
     `
-    background-color: ${theme.colors.white};
-    color: ${theme.colors.gray300};
+    background-color: ${theme.colors.tertiary};
+    color: ${theme.colors.accent};
   `}
 `;
