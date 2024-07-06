@@ -57,7 +57,7 @@ const Form = React.forwardRef(({}, ref) => {
         <Input.Label label="Province" htmlFor="name" />
         <Select
          style={{ color: "gray" }}
-         {...register("name", { required: true })}
+         {...register("name", { required: true, minLength: 2 })}
          onFocus={(e) => (e.target.style.color = "black")}
         >
          <option selected disabled value="a">
@@ -77,7 +77,7 @@ const Form = React.forwardRef(({}, ref) => {
         <Input.Label label="Status" htmlFor="status" />
         <Select
          style={{ color: "gray" }}
-         {...register("status", { required: true })}
+         {...register("status", { required: true, minLength: 2 })}
          onFocus={(e) => (e.target.style.color = "black")}
         >
          <option selected disabled value="a">

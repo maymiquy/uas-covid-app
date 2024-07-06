@@ -7,7 +7,7 @@ const SvgAbout = () => {
    data-name="Layer 1"
    style={{ width: "400px", height: "520px" }}
    viewBox="0 0 1013.94928 503"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlnsXlink="http://www.w3.org/1999/xlink"
   >
    <title>moonlight</title>
    <path
