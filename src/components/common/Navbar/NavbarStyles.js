@@ -74,8 +74,8 @@ export const NavbarLink = styled(Link)`
     color: ${theme.colors.gray300};
   }
 
-  ${({ isActive }) =>
-    isActive &&
+  ${({ active }) =>
+    active &&
     `
     color: ${theme.colors.gray300};
     border-bottom: 2px solid ${theme.colors.gray300};};
@@ -107,7 +107,7 @@ export const NavbarToggle = styled.button`
 `;
 
 export const NavbarDropdown = styled.div`
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  display: ${({ open }) => (open ? 'block' : 'none')};
   position: absolute;
   top: 4.5rem;
   left: 0;
@@ -135,8 +135,8 @@ export const NavbarDropdownLink = styled(Link)`
     color: ${theme.colors.gray300};
   }
 
-  ${({ isActive }) =>
-    isActive &&
+  ${({ active }) =>
+    active &&
     `
     background-color: ${theme.colors.tertiary};
     color: ${theme.colors.accent};

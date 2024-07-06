@@ -27,7 +27,11 @@ const Navbar = () => {
      <NavbarBrand to="/">Covid ID</NavbarBrand>
      <NavbarNav>
       {menu.map((item, index) => (
-       <NavbarLink key={index} to={item.href} isActive={pathname === item.href}>
+       <NavbarLink
+        key={index}
+        to={item.href}
+        active={pathname === item.href ? true : false}
+       >
         {item.name}
        </NavbarLink>
       ))}
@@ -41,12 +45,12 @@ const Navbar = () => {
      </NavbarToggle>
     </NavbarContent>
    </NavbarInner>
-   <NavbarDropdown isOpen={showingNavigationDropdown}>
+   <NavbarDropdown open={showingNavigationDropdown}>
     {menu.map((item, index) => (
      <NavbarDropdownLink
       key={index}
       to={item.href}
-      isActive={pathname === item.href}
+      active={pathname === item.href}
      >
       {item.name}
      </NavbarDropdownLink>

@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import theme from "../../utils/theme";
 
@@ -27,20 +28,20 @@ const SelectRoot = styled.select`
 
 const SelectOption = styled.option``;
 
-const Select = ({ children, id, value, onChange, ...props }) => {
+const Select = React.forwardRef(({ children, ...props }, ref) => {
  return (
-  <SelectRoot id={id} value={value} onChange={onChange} {...props}>
+  <SelectRoot ref={ref} {...props}>
    {children}
   </SelectRoot>
  );
-};
+});
 
-Select.Option = ({ name, value, ...props }) => {
+Select.Option = React.forwardRef(({ name, value, ...props }, ref) => {
  return (
-  <SelectOption value={value} {...props}>
+  <SelectOption value={value} ref={ref} {...props}>
    {name}
   </SelectOption>
  );
-};
+});
 
 export default Select;

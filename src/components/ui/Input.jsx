@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import theme from "../../utils/theme";
+import React from "react";
 
 const InputRoot = styled.div`
  display: flex;
@@ -43,13 +44,13 @@ const InputField = styled.input`
  }
 `;
 
-const Input = ({ children, className, ...props }) => {
+const Input = React.forwardRef(({ children, ...props }, ref) => {
  return (
-  <InputRoot className={className} {...props}>
+  <InputRoot ref={ref} {...props}>
    {children}
   </InputRoot>
  );
-};
+});
 
 Input.Label = ({ htmlFor, label, ...props }) => {
  return (
@@ -59,17 +60,20 @@ Input.Label = ({ htmlFor, label, ...props }) => {
  );
 };
 
-Input.Field = ({ name, type, id, value, onChange, ...props }) => {
- return (
-  <InputField
-   name={name}
-   type={type}
-   id={id}
-   value={value}
-   onChange={onChange}
-   {...props}
-  />
- );
-};
+Input.Field = React.forwardRef(
+ ({ name, type, id, value, onChange, ...props }, ref) => {
+  return (
+   <InputField
+    ref={ref}
+    name={name}
+    type={type}
+    id={id}
+    value={value}
+    onChange={onChange}
+    {...props}
+   />
+  );
+ },
+);
 
 export default Input;
