@@ -32,16 +32,11 @@ export const ProvinceProvider = ({ children }) => {
      break;
    }
 
+   const itemsPerPage = 5;
+   const pageIndex = Math.floor(existingProvinceIndex / itemsPerPage);
+
+   setCurrentPage(pageIndex + 1);
    setProvinceData(updatedProvinceData);
-  } else {
-   const newProvinceData = {
-    name,
-    confirmed: status === "confirmed" ? amount : 0,
-    recovered: status === "recovered" ? amount : 0,
-    death: status === "death" ? amount : 0,
-    treatment: status === "treatment" ? amount : 0,
-   };
-   setProvinceData([...provinceData, newProvinceData]);
   }
  };
 

@@ -1,13 +1,30 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Province from "../components/Indonesia/Province";
 import { ProvinceContext } from "../context/ProvinceContext";
 import Form from "../components/common/Form/Form";
+import { useSearchParams } from "react-router-dom";
 
 const ProvincePage = () => {
  const { provinceData, currentPage, setCurrentPage } =
   useContext(ProvinceContext);
+ const itemsPerPage = 5;
+ const [searchParams, setSearchParams] = useSearchParams();
 
- const [itemsPerPage] = useState(5);
+ useEffect(() => {
+  (async () => {
+   const storedPage = searchParams.get("page");
+   if (storedPage) {
+    setCurrentPage(parseInt(storedPage));
+   }
+  })();
+ }, []);
+
+ useEffect(() => {
+  setSearchParams({
+   table: "province",
+   page: currentPage.toString(),
+  });
+ }, [currentPage, setSearchParams]);
 
  const indexOfLastItem = currentPage * itemsPerPage;
  const indexOfFirstItem = indexOfLastItem - itemsPerPage;

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { ProvinceContext } from "../../../context/ProvinceContext";
 import {
@@ -16,6 +16,7 @@ import Button from "../../ui/Button";
 
 const Form = React.forwardRef(({}, ref) => {
  const { provinceData, handleAddData } = useContext(ProvinceContext);
+ const [isScrolling, setIsScrolling] = useState(false);
  const {
   register,
   handleSubmit,
@@ -23,12 +24,38 @@ const Form = React.forwardRef(({}, ref) => {
   reset,
  } = useForm();
 
+ useEffect(() => {
+  if (isScrolling) {
+   const currentPosition = window.pageYOffset;
+   const targetPosition = 600;
+   const distance = targetPosition - currentPosition;
+   const duration = 1000;
+   let start = null;
+
+   function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    const scrollY =
+     currentPosition + distance * easeInOutQuad(progress / duration);
+    window.scrollTo(0, scrollY);
+    if (progress < duration) {
+     window.requestAnimationFrame(step);
+    } else {
+     setIsScrolling(false);
+    }
+   }
+
+   function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+   }
+
+   window.requestAnimationFrame(step);
+  }
+ }, [isScrolling]);
+
  const onSubmit = (data) => {
   handleAddData(data.name, data.status, parseInt(data.amount));
-  window.scrollTo({
-   top: 600,
-   behavior: "smooth",
-  });
+  setIsScrolling(true);
   reset({
    name: "a",
    status: "a",
