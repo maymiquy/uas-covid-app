@@ -37,7 +37,7 @@ const Region = (props) => {
   >
    <GridContainer>
     {data.map((item, index) => (
-     <a href={"https://github.com/maymiquy"} key={index}>
+     <a key={index}>
       <Card styles={{ width: "360px", height: "360px" }}>
        <Card.Header heading={item.name.split(" ").pop()} />
        <Card.Body>

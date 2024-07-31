@@ -14,7 +14,7 @@ const Carousel = (props) => {
   >
    <GridContainer>
     {data.map((item, index) => (
-     <a href={"/https://github.com/maymiquy"} key={index}>
+     <a href={"https://github.com/maymiquy"} key={index}>
       <Card styles={{ width: "360px", height: "360px" }}>
        <Card.Header
         heading={item.status.charAt(0).toUpperCase() + item.status.slice(1)}
